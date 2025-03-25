@@ -15,7 +15,7 @@ int print_char(va_list args)
  *
  * Retour: Le nombre de caractères imprimés
  */
-int print_string(char *str)
+int print_string(va_list args)
 {
 	int count = 0;
 
