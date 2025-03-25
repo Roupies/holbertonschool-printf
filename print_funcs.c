@@ -5,7 +5,7 @@
  *
  * Retour: Le nombre de caractère imprimés (ici, toujours 1)
  */
-int print_char(char c)
+int print_char(va_list args)
 {
 	return (_putchar(c));
-} 
+}
