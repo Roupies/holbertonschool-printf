@@ -27,3 +27,15 @@ int print_string(va_list args)
 	}
 	return (count);
 }
+/**
+ * print_percentage - Handles the %% format specifier.
+ * @args: A va_list (not used).
+ *
+ * Return: The number of characters printed (1).
+ */
+int print_percentage(va_list args)
+{
+	(void)args;
+	_putchar('%');
+	return (1);
+}
