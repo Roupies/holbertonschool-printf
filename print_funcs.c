@@ -60,7 +60,7 @@ int print_int_dec(va_list args)
 		num = n;
 	}
 	if (num / 10)
-		count += print_integer(num / 10);
+		count += print_int_dec(num / 10);
 	count += _putchar((num % 10) + '0');
 	return (count);
 }
