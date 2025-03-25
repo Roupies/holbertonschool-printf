@@ -9,3 +9,21 @@ int print_char(va_list args)
 {
 	return (_putchar(c));
 }
+/**
+ * print_string - Fonction pour afficher une chaine de caractères
+ * @str: La chaine de caractère à afficher
+ *
+ * Retour: Le nombre de caractères imprimés
+ */
+int print_string(char *str)
+{
+	int count = 0;
+
+	if (str == NULL)
+		str = "(null)";
+	while (*str)
+	{
+		count += _putchar(*str++);
+	}
+	return (count);
+}
