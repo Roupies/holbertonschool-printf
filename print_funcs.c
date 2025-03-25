@@ -6,6 +6,7 @@
  */
 int print_char(va_list args)
 {
+	char c = va_arg(args, int);
         return (_putchar(c));
 }
 /**
@@ -17,7 +18,8 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	int count = 0;
-	
+	char *str = va_arg(args, char*);
+
 	if (str == NULL)
 		str = "(null)";
 	while (*str)
@@ -34,11 +36,10 @@ int print_string(va_list args)
  */
 int print_percentage(va_list args)
 {
-	(void)arg;
+	(void)args;
 	_putchar('%');
 	return(1);
 }
-#include "main.h"
 /**
  * print_int_dec - Function to display an integer in base 10
  * @n: The integer to be printed
@@ -48,6 +49,7 @@ int print_percentage(va_list args)
 int print_int_dec(va_list args)
 {
 	int count = 0;
+	int n = va_arg(args, int);
 	unsigned int num;
 	
 	if (n < 0)
@@ -59,8 +61,15 @@ int print_int_dec(va_list args)
 	{
 		num = n;
 	}
-	if (num / 10)
-		count += print_int_dec(num / 10);
-	count += _putchar((num % 10) + '0');
-	return (count);
+	
+	int divisor = 1;
+
+	while (num / divisor >= 10)
+		divisor *= 10;
+
+	for (; divisor > 0; divisor /= 10)
+	{
+		count += _putchar((num / divisor) + '0');
+		num %= divisor;
+	}
 }
