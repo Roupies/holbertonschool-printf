@@ -15,6 +15,9 @@ typedef struct specifier
 }
 specifier_t;
 
-int handle_format(const char *format, va_list args);
+int print_char(char c);
+int print_string(char *str);
+int print_percent(void);
+int print_integer(int n);
 
 #endif

@@ -80,9 +80,9 @@ Example 3: Print an Integer
 _printf("Length:[%d, %i]\n", len, len)
 output: Length: 39, 39
 
-Example 4: Print the Percentage Symbol
+Example 4: Print the Percent Symbol
 
-_printf("Percentage: %%\n");
+_printf("Percent: %%\n");
 output: Percent: %
 
 Step 3. Format specifiers supported:
@@ -92,7 +92,7 @@ The following format specifiers are implemented in this project:
 - %s: Prints a string.
 - %d: Prints an integer (signed).
 - %i: Prints an integer (signed).
-- %%: Prints the percentage symbole %.
+- %%: Prints the percent symbole %.
 
 
 #### **[Man Page]**
@@ -121,8 +121,10 @@ valgrind ./my_printf "Test string: %s\n" "Hello"
 
 Valgrind will report any memory leaks or issue in your code, allowing you to fix them.
 
-####### **[Flochart]**
+####### **[Flowchart]**
 
+![Alt text](images/Flowchart-print_funcs.png)
+ 
 ######## **[Authors]**
 
 - Maxime : https://github.com/Roupies/holbertonschool-printf.git
