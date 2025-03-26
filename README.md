@@ -115,20 +115,17 @@ printf "Test string: %s\n" "Hello"
 
 ###### **[Valgrind]**
 
-To check for memory leaks or other memory-related issue, use Valgrind to test your program:
-
-valgrind ./my_printf "Test string: %s\n" "Hello"
-
-Valgrind will report any memory leaks or issue in your code, allowing you to fix them.
+In this project, we did not use dynamic memory allocation (malloc, free), so there was little risk of memory leaks.
 
 ####### **[Flowchart]**
 
-![Flowchart-print_funcs](images/Flowchart-print_funcs.jpg)
+![Flowchar fonction printf](images/Flowchar fonction printf.jpg)
  
 ######## **[Authors]**
 
 - Maxime : https://github.com/Roupies/holbertonschool-printf.git
 - Olivia Letchy : https://github.com/Roupies/holbertonschool-printf.git
+- Williams Hillaire : https://github.com/Roupies/holbertonschool-printf.git
 
 ######### **[License]**
 
