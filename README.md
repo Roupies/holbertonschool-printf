@@ -135,4 +135,3 @@ Valgrind will report any memory leaks or issue in your code, allowing you to fix
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Feel free to copy and paste this into your `README.md` file and make any adjustments you need.
-
