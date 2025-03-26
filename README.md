@@ -123,7 +123,7 @@ Valgrind will report any memory leaks or issue in your code, allowing you to fix
 
 ####### **[Flowchart]**
 
-![Alt text](images/Flowchart-print_funcs.png)
+![Flowchart-print_funcs](images/Flowchart-print_funcs.jpg)
  
 ######## **[Authors]**
 
