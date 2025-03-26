@@ -2,19 +2,19 @@
 #include <limits.h>
 /**
  * print_char - Function to display a character
- *
- * Return: The number of characters printed (always 1)
+ *@args: The list of arguments.
+ * Return: The number of characters printed.
  */
 int print_char(va_list args)
 {
 	char c = va_arg(args, int);
 
 	_putchar(c);
-        return (1);
+	return (1);
 }
 /**
  * print_string - Function to display a string
- * @arg: A va_list
+ * @args: The list of arguments (a string to print).
  *
  * Return: The number of characters printed
  */
@@ -33,7 +33,7 @@ int print_string(va_list args)
 }
 /**
  * print_percentage - Function to display a '%' character
- * @args: A va_list (not used)
+ * @args: A va_list
  *
  * Return: The number of characters printed (1)
  */
@@ -41,11 +41,11 @@ int print_percentage(va_list args)
 {
 	(void)args;
 	_putchar('%');
-	return(1);
+	return (1);
 }
 /**
  * print_int_dec - Function to display an integer in base 10
- * @input_number: The integer to be printed
+ *@args: The list of arguments (the integer to print).
  *
  * Return: The number of characters printed
  */
@@ -54,7 +54,7 @@ int print_int_dec(va_list args)
 	int count = 0;
 	int input_number = va_arg(args, int);
 	int divisor = 1;
-	
+
 	{
 		if (input_number == INT_MIN)
 		{
@@ -68,7 +68,7 @@ int print_int_dec(va_list args)
 			input_number = -input_number;
 		}
 	}
-	
+
 	{
 		while (input_number / divisor >= 10)
 			divisor *= 10;
@@ -77,9 +77,9 @@ int print_int_dec(va_list args)
 	{
 		while (divisor > 0)
 		{
-			count += _putchar(( input_number / divisor) % 10 + '0');
+			count += _putchar((input_number / divisor) % 10 + '0');
 			divisor /= 10;
 		}
 	}
-	return count;
+	return (count);
 }
