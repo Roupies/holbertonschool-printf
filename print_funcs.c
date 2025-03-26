@@ -77,7 +77,7 @@ int print_int_dec(va_list args)
 	{
 		while (divisor > 0)
 		{
-			count += _putchar(( intput_number / divisor) % 10 + '0');
+			count += _putchar(( input_number / divisor) % 10 + '0');
 			divisor /= 10;
 		}
 	}
