@@ -1,23 +1,32 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 #include <stdlib.h>
 
-int _printf(const char *format, ...);
+/**
+ * struct specifier_s - struct linking a format specifier to its function
+ * @specifier: The format specifier character (e.g., 'd', 's', 'c')
+ * @func: Pointer to the corresponding handler function
+ *
+ * Description: This structure is used to map format specifiers
+ * to their respective handling functions in the _printf implementation.
+ */
+typedef struct specifier_s
+{
+	char specifier;
+	int (*func)(va_list);
+} specifier_t;
+
 int _putchar(char c);
 
-typedef struct specifier
-{
-	char spec;
-	int (*f)(va_list);
-}
-specifier_t;
+int print_int_dec(va_list args);
+int print_string(va_list args);
+int print_char(va_list args);
+int print_percentage(va_list args);
 
-int print_char(char c);
-int print_string(char *str);
-int print_percent(void);
-int print_integer(int n);
+int _printf(const char *format, ...);
+
 
 #endif
