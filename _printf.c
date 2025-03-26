@@ -31,3 +31,25 @@ int (*find_specifier_func(char specifier))(va_list)
 
 	return (NULL);
 }
+
+/**
+ * print_unknown_specifier - Prints unknown format specifiers.
+ * @c: The unknown specifier character.
+ *
+ * Return: The number of characters printed.
+ */
+int print_unknown_specifier(char c)
+{
+	int count = 0;
+
+	_putchar('%');
+	count++;
+
+	if (c != '\0') /* Ne pas imprimer si c'est '\0' */
+	{
+		_putchar(c);
+		count++;
+	}
+
+	return (count);
+}
