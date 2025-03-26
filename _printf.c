@@ -53,3 +53,54 @@ int print_unknown_specifier(char c)
 
 	return (count);
 }
+
+/**
+ * _printf - A custom implementation of printf.
+ * @format: A string containing the format specifiers.
+ *
+ * Return: The total number of characters printed
+ * (excluding the null byte used to end output to strings).
+ * Writes output to stdout, the standard output stream.
+ */
+int _printf(const char *format, ...)
+{
+	int len = 0;
+	va_list args;
+	const char *ptr;
+	int (*specifier_func)(va_list);
+
+	va_start(args, format);
+
+	if (format == NULL)
+		return (-1);
+
+	for (ptr = format; *ptr != '\0'; ptr++)
+	{
+		if (*ptr == '%')
+		{
+			ptr++;
+			if (*ptr == '\0')
+			{
+				va_end(args);
+				return (-1);
+			}
+			if (*ptr == '\0')
+				break;
+
+			specifier_func = find_specifier_func(*ptr);
+
+			if (specifier_func)
+				len += specifier_func(args);
+			else
+				len += print_unknown_specifier(*ptr);
+		}
+		else
+		{
+			_putchar(*ptr);
+			len++;
+		}
+	}
+
+	va_end(args);
+	return (len);
+}
