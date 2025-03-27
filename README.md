@@ -119,7 +119,7 @@ In this project, we did not use dynamic memory allocation (malloc, free), so the
 
 ####### **[Flowchart]**
 
-![Flowchart-print_funcs](images/Flowchart.jpg)
+![Flowchart-print_funcs](images/Flowchart.jpeg)
  
 ######## **[Authors]**
 
