@@ -123,9 +123,9 @@ In this project, we did not use dynamic memory allocation (malloc, free), so the
  
 ######## **[Authors]**
 
-- Maxime : https://github.com/Roupies/holbertonschool-printf.git
-- Olivia Letchy : https://github.com/Roupies/holbertonschool-printf.git
-- Williams Hillaire : https://github.com/Roupies/holbertonschool-printf.git
+- Maxime : https://github.com/Roupies
+- Olivia Letchy : https://github.com/Ravou
+- Williams: 
 
 ######### **[License]**
 
