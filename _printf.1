@@ -40,8 +40,8 @@ returns the total number of characters printed (excluding the null byte used to 
 
 int main(void)
 {
-    _printf("Hello, %s! You scored %d%%.\n", "world", 100);
-    return (0);
+_printf("Hello, %s! You scored %d%%.\n", "world", 100);
+return (0);
 }
 .fi
 
@@ -54,13 +54,15 @@ Hello, world! You scored 100%.
 - This implementation does not support floating-point numbers or additional format specifiers such as %u, %o, %x, or %p.
 - Handling of unknown format specifiers differs from the standard printf: instead of undefined behavior, it prints "%" followed by the character.
 
-.SH SEE ALSO
+.SH HISTORY
+This is a custom implementation created in March 2025. The goal is to understand how the standard printf works and implement basic functionality using variadic arguments.
+
+	.SH SEE ALSO
 .BR printf (3)
 
 .SH BUGS
-This implementation does not handle buffer overflow protection like the standard printf.
+This implementation does not handle buffer overflow protection like the standard printf, and may not efficiently handle large inputs.
 
 .SH AUTHORS
 Olivia, Williams, Maxime
-
 
