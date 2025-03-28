@@ -66,7 +66,7 @@ int _printf(const char *format, ...)
 {
 	int len = 0;
 	va_list args;
-	const char *ptr;
+	const char *cursor;
 	int (*specifier_func)(va_list);
 
 	va_start(args, format);
@@ -74,29 +74,29 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	for (ptr = format; *ptr != '\0'; ptr++)
+	for (cursor = format; *cursor != '\0'; cursor++)
 	{
-		if (*ptr == '%')
+		if (*cursor == '%')
 		{
-			ptr++;
-			if (*ptr == '\0')
+			cursor++;
+			if (*cursor == '\0')
 			{
 				va_end(args);
 				return (-1);
 			}
-			if (*ptr == '\0')
+			if (*cursor == '\0')
 				break;
 
-			specifier_func = find_specifier_func(*ptr);
+			specifier_func = find_specifier_func(*cursor);
 
 			if (specifier_func)
 				len += specifier_func(args);
 			else
-				len += print_unknown_specifier(*ptr);
+				len += print_unknown_specifier(*cursor);
 		}
 		else
 		{
-			_putchar(*ptr);
+			_putchar(*cursor);
 			len++;
 		}
 	}

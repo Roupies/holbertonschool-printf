@@ -26,6 +26,8 @@ int print_string(va_list args);
 int print_char(va_list args);
 int print_percentage(va_list args);
 
+int print_unknown_specifier(char c);
+int (*find_specifier_func(char specifier))(va_list);
 int _printf(const char *format, ...);
 
 
