@@ -21,13 +21,13 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	int count = 0;
-	char *str = va_arg(args, char*);
+	char *cursor = va_arg(args, char*);
 
-	if (str == NULL)
-		str = "(null)";
-	while (*str)
+	if (cursor == NULL)
+		cursor = "(null)";
+	while (*cursor)
 	{
-		count += _putchar(*str++);
+		count += _putchar(*cursor++);
 	}
 	return (count);
 }
